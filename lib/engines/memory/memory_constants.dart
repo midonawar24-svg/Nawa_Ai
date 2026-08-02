@@ -1,0 +1,33 @@
+class MemoryConstants {
+  static const int maxMemoriesPerType = 1000;
+  static const int maxQueryResults = 50;
+  static const int decayBatchSize = 500;
+  static const double initialConfidence = 0.6;
+  static const double minConfidence = 0.1;
+  static const double maxConfidence = 0.95;
+  static const double decayRate = 0.02;
+  static const double accessBoost = 0.05;
+  static const double minDecayRate = 0.005;
+  static const double maxDecayRate = 0.1;
+  static const double relevanceBase = 0.15;
+  static const double contentMatchScore = 0.5;
+  static const double tokenMatchScore = 0.4;
+  static const double fuzzyMatchScore = 0.3;
+  static const double tagMatchScore = 0.3;
+  static const double minRelevance = 0.12;
+  static const double recencyDivider = 86400000.0;
+  static const double recencyMax = 0.4;
+  static const double frequencyDivider = 10.0;
+  static const double frequencyMax = 0.3;
+  static const double importanceWeight = 0.25;
+  static const double feedbackWeight = 0.2;
+  static const double conversationBoost = 0.15;
+  static const double contextSimilarityWeight = 0.15;
+  static const double importanceDefault = 0.5;
+  static const double feedbackDefault = 0.0;
+  static const int episodicPriority = 100;
+  static const int semanticPriority = 80;
+  static const int preferencePriority = 60;
+  static const int skillPriority = 80;
+  const MemoryConstants._();
+}
