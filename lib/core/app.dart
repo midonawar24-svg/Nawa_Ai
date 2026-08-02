@@ -14,7 +14,8 @@ class AICoreApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      home: const BootPage(),
+      home: BootPage(onFinished: () {}),
+
     );
   }
 }
