@@ -1,27 +1,23 @@
-name: ai_core_os
-description: AI Core OS V11 Master V1 - Futuristic AI Operating System - Deep Black + Neon Glass - Chat Only
-publish_to: 'none'
-version: 11.1.0+1
-environment:
-  sdk: '>=3.0.0 <4.0.0'
-dependencies:
-  flutter:
-    sdk: flutter
-  flutter_localizations:
-    sdk: flutter
-  provider: ^6.1.2
-  intl: ^0.19.0
-  uuid: ^4.4.0
-  synchronized: ^3.1.0
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.0
-
-flutter:
-  uses-material-design: true
-  assets:
-    - assets/
-    - assets/images/
-    - assets/boot_logo.webp
+name: Build APK Fixed
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.0'
+      - run: sed -i "s/^name:.*/name: nawa_ai/" pubspec.yaml
+      - run: rm -rf android
+      - run: flutter create. --platforms=android
+      - run: flutter pub get
+      - run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
