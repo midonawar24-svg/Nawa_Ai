@@ -12,7 +12,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
-      - name: Fix pubspec name
+      - name: Fix package name
         run: |
           sed -i 's/^name:.*/name: nawa_ai/' pubspec.yaml
           cat pubspec.yaml
