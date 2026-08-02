@@ -1,0 +1,7 @@
+include: package:flutter_lints/flutter.yaml
+linter:
+  rules:
+    - avoid_print
+    - prefer_const_constructors
+    - avoid_empty_else
+    - avoid_relative_lib_imports

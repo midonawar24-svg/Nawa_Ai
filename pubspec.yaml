@@ -1,0 +1,27 @@
+name: ai_core_os
+description: AI Core OS V11 Master V1 - Futuristic AI Operating System - Deep Black + Neon Glass - Chat Only
+publish_to: 'none'
+version: 11.1.0+1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: ^6.1.2
+  intl: ^0.19.0
+  uuid: ^4.4.0
+  synchronized: ^3.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/boot_logo.webp
