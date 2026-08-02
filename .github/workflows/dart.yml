@@ -5,21 +5,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
-
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
-
+      - run: sed -i "s/^name:.*/name: nawa_ai/" pubspec.yaml
       - run: rm -rf android
-      - run: flutter create . --platforms=android
+      - run: flutter create --platforms=android.
       - run: flutter pub get
       - run: flutter build apk --release
-
       - uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
