@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:math' as math;
-import '../core/app_theme.dart';
+import 'package:nawa_ai/core/app_theme.dart
 
 /// Boot Page Living - الشاشة السمرا + الكورة الحية بالنور اللي بيروح ويجي
 /// المشهد المطلوب: شاشة سودا تمام، الكورة في النص مكتوب عليها AI CORE، النور حواليها حي
