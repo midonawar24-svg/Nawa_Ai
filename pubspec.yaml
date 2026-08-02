@@ -12,7 +12,6 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'
-      - run: sed -i "s/^name:.*/name: nawa_ai/" pubspec.yaml
       - run: rm -rf android
       - run: flutter create. --platforms=android
       - run: flutter pub get
