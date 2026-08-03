@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'app_theme.dart';
 import '../features/boot/boot_page.dart';
+import '../features/chat/chat_home.dart'; // ده الملف اللي لقيته
 
-/// V12 - App Entry - نظام ذكي مش Dashboard
-class AICoreApp extends StatelessWidget {
+class AICoreApp extends StatefulWidget {
   const AICoreApp({super.key});
+  @override
+  State<AICoreApp> createState() => _AICoreAppState();
+}
+
+class _AICoreAppState extends State<AICoreApp> {
+  bool _finishedBoot = false;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +20,15 @@ class AICoreApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.dark,
-      home: BootPage(onFinished: () {}),
-
+      home: _finishedBoot
+          ? const ChatMasterPage() // <-- دي الصفحة الرئيسية الحقيقية
+          : BootPage(
+              onFinished: () {
+                setState(() {
+                  _finishedBoot = true;
+                });
+              },
+            ),
     );
   }
 }
